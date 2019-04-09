@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('unsubscribe', function () {
     return view('welcome');
-});
+})->name('unsubscribe');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/','Test');
