@@ -18,6 +18,7 @@ class CreateArticlesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title')->nullabel();
             $table->text('content')->nullabel();
+            $table->string('image')->nullabel();
             $table->timestamps();
         });
 

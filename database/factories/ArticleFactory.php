@@ -18,5 +18,6 @@ $factory->define(Article::class, function (Faker $faker) {
     return [
         'title'   => $faker->name,
         'content' => $faker->text,
+        'image' => $faker->image(storage_path('app/public')),
     ];
 });
