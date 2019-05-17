@@ -20,7 +20,20 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //cache
-Route::group(['prefix' => 'cache','namespace'=>'Cache'], function () {
+Route::group(['prefix' => 'cache', 'namespace' => 'Cache'], function () {
     Route::get('lock', 'CacheTestcontroller@lock');
+    Route::get('index', 'CacheTestcontroller@index');
+
+});
+
+//error
+Route::group(['prefix' => 'error'], function () {
+    Route::get('handler', 'ErrorTestController@handler');
+
+});
+
+//collect
+Route::group(['prefix' => 'collect'], function () {
+    Route::get('now', 'CollectTestController@now');
 
 });
