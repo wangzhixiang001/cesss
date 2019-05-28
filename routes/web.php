@@ -37,3 +37,10 @@ Route::group(['prefix' => 'collect'], function () {
     Route::get('now', 'CollectTestController@now');
 
 });
+
+//collect
+Route::group(['prefix' => 'tree', 'namespace' => 'Tree'], function () {
+    Route::get('index', 'PostController@index');
+
+});
+
