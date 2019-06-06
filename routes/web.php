@@ -17,6 +17,12 @@ Route::get('unsubscribe', function () {
 
 Auth::routes();
 
+//test
+Route::group(['prefix' => 'test'], function () {
+    Route::get('index', 'TestController@index');
+
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 //cache

@@ -7,4 +7,11 @@ if(!function_exists('ceshi')){
 	}
 }
 
+function myfunction($v1, $v2)
+{
+	// var_dump($v1);
+	// var_dump($v2);die;
+    return $v1 . "-" . $v2;
+}
+
 
