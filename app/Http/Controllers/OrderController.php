@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Events\OrderShipped;
 use App\Models\Order;
 
+
 class OrderController extends Controller
 {
     //
@@ -14,6 +15,8 @@ class OrderController extends Controller
     	$order = Order::findOrFail(1);
 
     	// 订单发货逻辑 ...
+    	event('wocao',[1,2]);
+    	
     	event(new OrderShipped($order));
 
     	dd('SUCCESS');

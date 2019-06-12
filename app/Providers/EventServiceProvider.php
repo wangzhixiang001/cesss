@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
-     /**
+    /**
      * 需要注册的订阅者类。
      *
      * @var array
@@ -23,13 +23,12 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        Registered::class         => [
+        Registered::class => [
             SendEmailVerificationNotification::class,
         ],
         // 'App\Events\OrderShipped' => [
         //     'App\Listeners\SendShipmentNotification',
         // ],
-
 
     ];
 
@@ -42,8 +41,8 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        Event::listen('App\Events\OrderShipped', function ($foo, $bar) {
-            info('boot');
+        Event::listen('wocao', function ($event,$a) {
+            dd($a);
         });
 
         //
