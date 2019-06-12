@@ -16,6 +16,9 @@ Route::get('unsubscribe', function () {
 })->name('unsubscribe');
 
 Auth::routes();
+Route::get('/', function(){
+	phpinfo();
+});
 
 //test
 Route::group(['prefix' => 'test'], function () {
@@ -47,6 +50,13 @@ Route::group(['prefix' => 'collect'], function () {
 //collect
 Route::group(['prefix' => 'tree', 'namespace' => 'Tree'], function () {
     Route::get('index', 'PostController@index');
+
+});
+
+
+//事件
+Route::group(['prefix' => 'listen'], function () {
+    Route::get('index', 'OrderController@index');
 
 });
 
