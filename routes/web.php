@@ -60,3 +60,22 @@ Route::group(['prefix' => 'listen'], function () {
 
 });
 
+
+// 通知
+Route::group(['prefix' => 'notifiable'], function () {
+	// 单个发送
+    Route::get('index', 'NotifiableController@index');
+    // 多个发送
+    Route::get('allUser', 'NotifiableController@allUser');
+    // 按需通知
+    Route::get('route', 'NotifiableController@route');
+    Route::get('routeUser/{mail?}', 'NotifiableController@routeUser')->name('mail');
+    // 数据库通知
+    Route::get('dataNoti','NotifiableController@datebaseNotifiable');
+    Route::get('unDataNoti','NotifiableController@unDatabaseNotifiable');
+
+});
+
+
+Route::get('message/index', 'MessageController@index');
+Route::get('message/send', 'MessageController@send');
