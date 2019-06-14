@@ -18,3 +18,4 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 Broadcast::channel('user.{toUserId}', function ($user, $toUserId) {
     return $user->id == $toUserId;
 });
+

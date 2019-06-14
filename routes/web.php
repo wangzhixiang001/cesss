@@ -1,4 +1,5 @@
 <?php
+use App\Events\PublicMessageEvent;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,3 +80,12 @@ Route::group(['prefix' => 'notifiable'], function () {
 
 Route::get('message/index', 'MessageController@index');
 Route::get('message/send', 'MessageController@send');
+
+Route::get('/echo', function () {
+    return view('echo');
+ });
+
+Route::get('/push/{message}', function ($message) {
+    broadcast(new PublicMessageEvent($message));
+    dd('SUCCESS');
+});
