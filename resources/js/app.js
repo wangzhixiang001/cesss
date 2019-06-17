@@ -33,7 +33,7 @@ require('./bootstrap');
 // });
 
 console.log('来了老弟')
-Echo.channel('push').listen('.push.message', (e) => {
+Echo.channel('push').listen('App\Events\PublicMessageEvent', (e) => {
     alert('来了')
     console.log(e);
 });
