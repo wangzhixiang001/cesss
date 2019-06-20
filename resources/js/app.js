@@ -33,7 +33,7 @@ require('./bootstrap');
 // });
 
 console.log('来了老弟')
-Echo.channel('push').listen('App\Events\PublicMessageEvent', (e) => {
+Echo.channel('laravel_database_push').listen('.push.message', (e) => {
     alert('来了')
     console.log(e);
 });

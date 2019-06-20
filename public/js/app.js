@@ -38049,7 +38049,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window
 
 
 console.log('来了老弟');
-Echo.channel('push').listen('App\Events\PublicMessageEvent', function (e) {
+Echo.channel('laravel_database_push').listen('.push.message', function (e) {
   alert('来了');
   console.log(e);
 });

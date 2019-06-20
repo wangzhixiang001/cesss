@@ -86,6 +86,7 @@ Route::get('/echo', function () {
  });
 
 Route::get('/push/{message}', function ($message) {
+   
     broadcast(new PublicMessageEvent($message));
     dd('SUCCESS');
 });
